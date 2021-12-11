@@ -1,6 +1,9 @@
 package com.epam.entities;
 
+/*We make this class mutable, because the heir will be mutable*/
+
 public class Cone {
+	
 	private Point center;
 	private double coneRadius;
 	private double сoneHeight;
@@ -54,22 +57,28 @@ public class Cone {
 
 	@Override
 	public boolean equals(Object obj) {
-		if (this == obj)
+		if (this == obj) {
 			return true;
-		if (obj == null)
+		}
+		if (obj == null) {
 			return false;
-		if (getClass() != obj.getClass())
+		}
+		if (getClass() != obj.getClass()) {
 			return false;
+		}
 		Cone other = (Cone) obj;
 		if (center == null) {
 			if (other.center != null)
 				return false;
-		} else if (!center.equals(other.center))
+		} else if (!center.equals(other.center)) {
 			return false;
-		if (Double.doubleToLongBits(coneRadius) != Double.doubleToLongBits(other.coneRadius))
+		}
+		if (Double.doubleToLongBits(coneRadius) != Double.doubleToLongBits(other.coneRadius)) {
 			return false;
-		if (Double.doubleToLongBits(сoneHeight) != Double.doubleToLongBits(other.сoneHeight))
+		}
+		if (Double.doubleToLongBits(сoneHeight) != Double.doubleToLongBits(other.сoneHeight)) {
 			return false;
+		}
 		return true;
 	}
 

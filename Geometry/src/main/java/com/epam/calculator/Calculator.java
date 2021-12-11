@@ -2,15 +2,22 @@ package com.epam.calculator;
 
 import com.epam.entities.Cone;
 import com.epam.entities.Point;
+import static java.lang.Math.pow;
+import static java.lang.Math.sqrt;
+import static java.lang.Math.PI;;
 
 public class Calculator {
-
-	public static double coneSurfaceAreaCalculation(double radius, double height) {
-		return Math.PI * radius * (Math.sqrt(radius*radius + height*height) + radius);
+	
+	public static double coneSurfaceAreaCalculation(Cone cone) {
+		final double coneRadius = cone.getConeRadius();
+		final double coneHeight = cone.getСoneHeight();
+		return PI * coneRadius * (sqrt(pow(coneRadius, 2) + pow(coneHeight, 2)) + coneRadius);
 	}
 	
 	public static double coneVolumeCalculation(Cone cone) {
-		return (1/3) * Math.PI * (cone.getConeRadius() * cone.getConeRadius()) * cone.getСoneHeight();
+		final double coneRadius = cone.getConeRadius();
+		final double coneHeight = cone.getСoneHeight();
+		return (1/3) * PI * (pow(coneRadius, 2)) * coneHeight;
 	}
 	
 	public static double coneVolumeRatioCalculation(double cuttingPlaneHeight, Cone defaultCone) {
