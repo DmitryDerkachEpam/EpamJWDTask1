@@ -6,9 +6,9 @@ import com.epam.calculator.Calculator;
 import com.epam.entities.ConeObservable;
 import com.epam.observation.Observer;
 
-public class ConeObserverWithStoragingFunction implements Observer<ConeObservable>{
+public class ConeObserverWithStoragingParametersFunction implements Observer<ConeObservable>{
 
-    private static ConeObserverWithStoragingFunction INSTANCE;
+    private static ConeObserverWithStoragingParametersFunction INSTANCE;
 	/* Is it a good way to make all fields in Calculator class static to avoid
 	 * creating instances in situation where we can avoid it? 
 	 * 
@@ -16,7 +16,7 @@ public class ConeObserverWithStoragingFunction implements Observer<ConeObservabl
 	 */
     private final Map<Integer, ConeParametersForStoraging> parameters = new HashMap<>();
 
-    private ConeObserverWithStoragingFunction() {
+    private ConeObserverWithStoragingParametersFunction() {
     	
     }
     
@@ -31,9 +31,9 @@ public class ConeObserverWithStoragingFunction implements Observer<ConeObservabl
         return parameters.get(key);
     }
 
-    public static ConeObserverWithStoragingFunction getInstance() {
+    public static ConeObserverWithStoragingParametersFunction getInstance() {
         if (INSTANCE == null) {
-            INSTANCE = new ConeObserverWithStoragingFunction();
+            INSTANCE = new ConeObserverWithStoragingParametersFunction();
         }
         return INSTANCE;
     }
